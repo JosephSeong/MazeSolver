@@ -61,7 +61,7 @@ public:
 					Node start = Node(now.getRow(), now.getCol());
 					Node* p = start.getLink();
 					lqueue.enqueue(p);//출발점노드를 링크큐에 쌓는
-					printf("                                               <출발점: (%d, %d)>", now.getRow(), now.getCol());
+					printf("\n<출발점: (%d, %d)>", now.getRow(), now.getCol());
 					map[i][j] = '5';    //지나온 길로 나중에 설정하기 위해 '5'으로 바꾼다.
 					printf("\n");
 				}
@@ -69,7 +69,7 @@ public:
 				{
 					exit[0] = j;
 					exit[1] = i;
-					printf("                                               <도착점: (%d, %d)>", exit[1], exit[0]);
+					printf("<도착점: (%d, %d)>\n", exit[1], exit[0]);
 					map[i][j] = '9';
 				}
 			}
@@ -81,7 +81,7 @@ public:
 	void print() //현재 Maze를 화면에 출력
 	{
 		int check = 1;
-		cout << "\n--------전체 미로의 크기---------  " << "----" << row << " *" << col << "----" << endl;
+		cout << "\n--------미로의 크기---------  " << "----" << row << " * " << col << "----" << endl;
 		for (int i = 0; i < row; i++)
 		{
 			for (int j = 0; j < col; j++)
@@ -96,7 +96,7 @@ public:
 				}
 				else if (map[i][j] == '7')
 				{
-					cout << "☆"; //탐색 길
+					cout << "◇"; //탐색 길
 				}
 				else if (map[i][j] == '3') {
 					cout << "◆";	//지나온 길(현재 나의 위치 생각)
@@ -106,7 +106,7 @@ public:
 					cout << "Ⅹ";
 				}
 				else if (map[i][j] == '5') {
-					cout << "∈";
+					cout << "E";
 				}
 			}
 			cout << endl;
@@ -127,7 +127,7 @@ public:
 			search(x - 1, y);
 			search(x + 1, y);
 
-			printf("(%d,%d) -> ", now.getRow(), now.getCol());
+			printf("-> (%d,%d)", now.getRow(), now.getCol());
 
 			//system("cls");
 			Move();
