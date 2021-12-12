@@ -10,13 +10,13 @@
 using namespace std;
 class Maze {
 private:
-	int row;    //미로의 행 (y좌표)
-	int col;    //미로의 열 (x좌표)
-	char** map;    //미로 맵
+	int row;		//미로의 행 (y좌표)
+	int col;		//미로의 열 (x좌표)
+	char** map;     //미로 맵
 	Location now;	//Location 이용(현재위치 확인 겸 탐색)
 	int exit[2];	//도착점
 	LinkedQueue lqueue;	//LinkedQueue 활용
-	LinkedList llist; //출력할때 연결리스트
+	LinkedList llist;   //출력할때 연결리스트
 	Node* nnode;
 	int x, y;
 public:
@@ -129,7 +129,6 @@ public:
 
 			printf("-> (%d,%d)", now.getRow(), now.getCol());
 
-			//system("cls");
 			Move();
 			print();
 			Sleep(200);

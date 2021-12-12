@@ -30,6 +30,5 @@ public:
 			tmp->print();
 			tmp = tmp->getLink();
 		}
-		printf("ÃÑ %dÈ¸ Å½»ö Çß´Ù", size);
 	}
 };

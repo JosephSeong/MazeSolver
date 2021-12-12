@@ -7,6 +7,5 @@ void main() {
 	m.load("maze.txt");
 	m.print();
 	Sleep(1500);
-	//system("cls");
 	m.searchExit();
 }
