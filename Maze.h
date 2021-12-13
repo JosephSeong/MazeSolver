@@ -37,8 +37,6 @@ public:
 	}
 	void load(const char* fname) //미로 파일을 읽어옴
 	{
-		int check = 1;
-		char c;
 		char temp;
 		row = 1;
 		col = 0;
@@ -53,7 +51,7 @@ public:
 			{
 				fin >> temp;    // temp에저장
 				map[i][j] = temp;     // map에저장
-				//check이 1 이면 출발점 2이면 도착점 이렇게 조건을 주어 한다.
+
 				if (map[i][j] == 'e')   //출발점의 좌표일 경우, (x,y) 좌표가 벽면일 경우 포함
 				{
 					now.setRow(i);
@@ -96,7 +94,7 @@ public:
 				}
 				else if (map[i][j] == '7')
 				{
-					cout << "◇"; //탐색 길
+					cout << "◇";   //탐색 길
 				}
 				else if (map[i][j] == '3') {
 					cout << "◆";	//지나온 길(현재 나의 위치 생각)
